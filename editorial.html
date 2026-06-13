@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CHACHAMAN — Open Format DJ • Producer • Artist</title>
+<meta name="description" content="CHACHAMAN — open format DJ, producer & artist. New York raised. Owner of Area 51 Radio / Creative Music Television. Classic house, hip-hop, R&B edits, Jersey club. Book weddings, parties, corporate events, bars & lounges." />
+
+<!-- ★★★ EDIT YOUR LINKS HERE — the ONLY block you need to touch. ★★★ -->
+<script>
+  window.LINKS = {
+    area51:       "https://creativemusictelevision.com",
+    soundcloud:   "#PASTE-YOUR-SOUNDCLOUD-URL-HERE",
+    instagram:    "https://www.instagram.com/chachamansworld",
+    tiktok:       "https://www.tiktok.com/@chacha4dapeoplehoe",
+    youtube:      "https://www.youtube.com/@themotionclub51",
+    bookingEmail: "admin@creativemusictelevision.com",
+    bookingPhone: "631-215-5636"
+  };
+  window.LATEST_MIX_ID = "uDIr4F1KSkc";
+</script>
+
+<style>
+  @font-face{font-family:'Polonium';src:url('fonts/polonium.otf') format('opentype');font-weight:400;font-display:swap}
+  @font-face{font-family:'Polonium';src:url('fonts/polonium-bold.otf') format('opentype');font-weight:800;font-display:swap}
+  @font-face{font-family:'DTM-Sans';src:url('fonts/dtm-sans.otf') format('opentype');font-display:swap}
+  @font-face{font-family:'DTM-Mono';src:url('fonts/dtm-mono.otf') format('opentype');font-display:swap}
+
+  :root{
+    --paper:#f4f3ee;
+    --paper2:#eceae3;
+    --ink:#0e0e0c;
+    --red:#e8311c;
+    --muted:#6f6e66;
+    --line:rgba(14,14,12,.16);
+    --f-disp:'Polonium',Arial,sans-serif;
+    --f-body:'DTM-Sans',system-ui,sans-serif;
+    --f-mono:'DTM-Mono',ui-monospace,monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  ::selection{background:var(--ink);color:var(--paper)}
+  a{color:inherit;text-decoration:none}
+  img{display:block}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  section{padding:110px 0;position:relative}
+
+  /* scroll progress */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--red);z-index:80}
+
+  .mono{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+  .index{font-family:var(--f-mono);font-size:12px;letter-spacing:.12em;color:var(--red)}
+
+  /* ---------- NAV ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:70;background:rgba(244,243,238,.9);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:1280px;margin:0 auto;padding:16px 32px;display:flex;align-items:center;justify-content:space-between}
+  .logo{font-family:var(--f-disp);font-weight:800;font-size:21px;letter-spacing:-.01em}
+  .logo i{color:var(--red);font-style:normal}
+  .nav-links{display:flex;gap:28px;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase}
+  .nav-links a{color:var(--ink);position:relative;padding:3px 0}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--red);transition:width .25s}
+  .nav-links a:hover::after{width:100%}
+  .nav-book{color:var(--red)!important}
+  @media(max-width:900px){.nav-links a:not(.nav-book){display:none}}
+
+  /* ---------- HERO ---------- */
+  header{padding:150px 0 70px}
+  .hero-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:30px}
+  .hero-meta span{font-family:var(--f-mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .hero-meta span b{color:var(--ink);font-weight:400}
+  h1{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;line-height:.86;letter-spacing:-.02em;
+    white-space:nowrap;font-size:clamp(58px,13vw,200px)}
+  h1 .r{color:var(--red)}
+  .hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:end;margin-top:40px}
+  .hero-bottom>*{min-width:0}
+  @media(max-width:900px){.hero-bottom{grid-template-columns:1fr;gap:34px}.hero-copy{order:2}.hero-photo{order:1}}
+  .hero-lead{font-size:clamp(18px,2.1vw,23px);line-height:1.5;letter-spacing:-.01em;max-width:520px}
+  .hero-lead b{font-weight:400} .hero-lead .r{color:var(--red)}
+  .hero-sub{margin-top:18px;font-size:15px;color:var(--muted);line-height:1.6;max-width:480px}
+  .hero-links{display:flex;gap:26px;margin-top:28px;flex-wrap:wrap}
+  .tlink{font-family:var(--f-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:inline-flex;align-items:center;gap:9px;
+    border-bottom:2px solid var(--ink);padding-bottom:5px;transition:color .2s,border-color .2s}
+  .tlink:hover{color:var(--red);border-color:var(--red)}
+  .tlink.red{color:var(--red);border-color:var(--red)}
+  .socials{display:flex;gap:16px;margin-top:28px}
+  .socials a{color:var(--ink);transition:color .2s,transform .2s}
+  .socials a:hover{color:var(--red);transform:translateY(-3px)}
+  .socials svg{width:19px;height:19px;fill:currentColor}
+
+  .figure{position:relative}
+  .figure img{width:100%;aspect-ratio:4/5;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .5s ease}
+  .figure:hover img{filter:grayscale(0) contrast(1.02)}
+  .figure .cap{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--f-mono);font-size:10.5px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .figure .cap b{color:var(--ink);font-weight:400}
+
+  /* ---------- MARQUEE ---------- */
+  .marq{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;white-space:nowrap;background:var(--ink)}
+  .marq.paper{background:var(--paper)}
+  .marq-track{display:inline-block;padding:14px 0;font-family:var(--f-disp);font-weight:800;font-size:24px;text-transform:uppercase;
+    letter-spacing:-.01em;color:var(--paper);animation:scroll 30s linear infinite}
+  .marq.paper .marq-track{color:var(--ink)}
+  .marq-track.rev{animation-direction:reverse}
+  .marq-track span{margin:0 8px}
+  .marq-track .r{color:var(--red)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* ---------- SECTION HEAD ---------- */
+  .shead{display:flex;align-items:baseline;gap:18px;border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:46px}
+  .shead .no{font-family:var(--f-mono);font-size:13px;color:var(--red);letter-spacing:.1em}
+  h2{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;line-height:.9;letter-spacing:-.02em;font-size:clamp(34px,5.2vw,74px)}
+  .shead .right{margin-left:auto;font-family:var(--f-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);align-self:center}
+
+  /* ---------- GALLERY ---------- */
+  .gal-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+  @media(max-width:760px){.gal-grid{grid-template-columns:1fr;gap:34px}}
+  .gal img{width:100%;aspect-ratio:3/3.2;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .5s}
+  .gal:hover img{filter:grayscale(0)}
+  .gal .cap{display:flex;justify-content:space-between;margin-top:10px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .gal .cap b{color:var(--ink);font-weight:400}
+
+  /* ---------- MIX ---------- */
+  .player{border:1px solid var(--ink);background:var(--ink)}
+  .player .bar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--paper)}
+  .player .bar .dot{color:var(--red)}
+  .player .frame{position:relative;width:100%;padding-top:56.25%;border-top:1px solid rgba(244,243,238,.25)}
+  .player iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .unmute{font-family:var(--f-mono);font-size:11px;color:var(--muted);margin-top:14px;letter-spacing:.06em;text-transform:uppercase}
+  .unmute b{color:var(--red)}
+
+  /* ---------- ABOUT ---------- */
+  #about{background:var(--paper2)}
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:60px}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:36px}}
+  .about-lead{font-family:var(--f-disp);font-weight:800;font-size:clamp(22px,2.6vw,32px);line-height:1.12;letter-spacing:-.01em;margin-bottom:26px;text-transform:uppercase}
+  .about-lead .r{color:var(--red)}
+  .about-copy p{font-size:16px;line-height:1.75;color:#3a3a33;margin-bottom:16px}
+  .about-copy b{color:var(--ink)}
+  .facts{border-top:1px solid var(--line)}
+  .fact{display:flex;justify-content:space-between;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .fact .k{font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .fact .v{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;font-size:17px;letter-spacing:-.01em;text-align:right}
+
+  /* ---------- PLAYED (editorial list) ---------- */
+  .list .li{display:grid;grid-template-columns:60px 1fr 1.1fr;gap:24px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line);transition:padding .25s,background .25s}
+  .list .li:first-child{border-top:1px solid var(--line)}
+  .list .li:hover{padding-left:14px}
+  .list .no{font-family:var(--f-mono);font-size:13px;color:var(--red)}
+  .list .ti{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;font-size:clamp(22px,3vw,34px);letter-spacing:-.01em;line-height:1}
+  .list .li:hover .ti{color:var(--red)}
+  .list .ds{font-size:14px;color:var(--muted);line-height:1.5}
+  .list .ds b{color:var(--ink)}
+  @media(max-width:720px){.list .li{grid-template-columns:40px 1fr;gap:12px}.list .ds{grid-column:1/-1;padding-left:52px}}
+  .play-note{margin-top:30px;font-size:15px;color:var(--muted)} .play-note b{color:var(--ink)} .play-note .r{color:var(--red);font-weight:700}
+
+  /* ---------- AREA 51 ---------- */
+  #area51{background:var(--ink);color:var(--paper)}
+  #area51 .shead{border-color:rgba(244,243,238,.2)}
+  #area51 h2{color:var(--paper)} #area51 .shead .no{color:var(--red)} #area51 .shead .right{color:rgba(244,243,238,.6)}
+  .a51-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+  @media(max-width:860px){.a51-grid{grid-template-columns:1fr;gap:30px}}
+  .a51-lead{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;font-size:clamp(26px,3.4vw,44px);line-height:.98;letter-spacing:-.02em}
+  .a51-lead .r{color:var(--red)}
+  .a51-copy p{font-size:15.5px;line-height:1.75;color:rgba(244,243,238,.72);margin-bottom:18px}
+  .a51-copy b{color:var(--paper)}
+  .a51-chips{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 26px}
+  .a51-chips span{font-family:var(--f-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(244,243,238,.3);padding:8px 13px;color:rgba(244,243,238,.85)}
+  .a51-chips span.r{border-color:var(--red);color:var(--red)}
+  .tlink.light{border-color:var(--paper);color:var(--paper)} .tlink.light:hover{color:var(--red);border-color:var(--red)}
+
+  /* ---------- BOOKING ---------- */
+  #booking{text-align:center;padding:130px 0}
+  .book-big{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;line-height:.84;letter-spacing:-.03em;font-size:clamp(60px,15vw,230px);white-space:nowrap}
+  .book-big .r{color:var(--red)}
+  .book-sub{font-family:var(--f-mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:24px}
+  .contact-rows{margin-top:36px;display:flex;flex-direction:column;gap:14px;align-items:center}
+  .contact{font-family:var(--f-mono);font-size:clamp(14px,2vw,20px);letter-spacing:.04em;display:inline-flex;gap:12px;align-items:center;
+    border-bottom:2px solid var(--ink);padding-bottom:7px;transition:color .2s,border-color .2s}
+  .contact:hover{color:var(--red);border-color:var(--red)}
+  .contact .k{color:var(--red)}
+  #booking .socials{justify-content:center;margin-top:40px}
+
+  footer{border-top:1px solid var(--ink);padding:30px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--f-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  footer a:hover{color:var(--red)} footer .lg{font-family:var(--f-disp);font-weight:800;color:var(--ink);letter-spacing:-.01em}
+
+  .fade{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .fade.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+
+<nav>
+  <div class="nav-in">
+    <a class="logo" href="#top">CHACHAMAN<i>.</i></a>
+    <div class="nav-links">
+      <a href="#gallery">On Stage</a>
+      <a href="#mix">The Mix</a>
+      <a href="#about">About</a>
+      <a href="#played">Played</a>
+      <a href="#area51">Area 51</a>
+      <a class="nav-book" href="#booking">Book Me</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header id="top">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span><b>DJ · Producer · Artist</b></span>
+      <span>New York → DFW</span>
+      <span>Open Format</span>
+      <span>Est. NYC</span>
+    </div>
+    <h1 id="wordmark">CHACHAMAN<span class="r">.</span></h1>
+    <div class="hero-bottom">
+      <div class="hero-copy">
+        <p class="hero-lead"><b>Open format DJ, producer &amp; artist.</b> Classic house, hip-hop, R&amp;B edits and Jersey club — blended into <span class="r">one motion</span>.</p>
+        <p class="hero-sub">Entrepreneur in digital marketing and owner of Area 51 Radio. New York raised, reading rooms from weddings to warehouses.</p>
+        <div class="hero-links">
+          <a class="tlink red" href="#mix">▶ Latest Mix</a>
+          <a class="tlink" href="#booking">Book Me →</a>
+        </div>
+        <div class="socials">
+          <a data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.8.4 4 .7c-.8.3-1.5.8-2.2 1.4C1.2 2.8.7 3.5.4 4.3c-.3.8-.5 1.7-.6 3C-.2 8.6-.2 9 0 12.3c0 3.3 0 3.7.1 5 .1 1.3.3 2.2.6 3 .3.8.8 1.5 1.4 2.2.7.6 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.8 2.2-1.4.6-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-3-.3-.8-.8-1.5-1.4-2.2C21.2 1.2 20.5.7 19.7.4c-.8-.3-1.7-.5-3-.6C15.4-.2 15-.2 11.7 0H12zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.8-10.4a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg></a>
+          <a data-link="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.4V2h-3.4v13.3a2.9 2.9 0 1 1-2-2.7V9.1a6.3 6.3 0 1 0 5.4 6.2V8.9a8.1 8.1 0 0 0 4.6 1.4V6.9c-.3 0-.6 0-.8-.2z"/></svg></a>
+          <a data-link="soundcloud" target="_blank" rel="noopener" aria-label="SoundCloud"><svg viewBox="0 0 24 24"><path d="M1.2 13.6c-.1 0-.2.1-.2.2l-.3 2 .3 2c0 .1.1.2.2.2s.2-.1.2-.2l.3-2-.3-2c0-.1-.1-.2-.2-.2zm2-1.2c-.1 0-.2.1-.3.2l-.3 3.2.3 3.1c0 .1.1.2.3.2.1 0 .2-.1.2-.2l.4-3.1-.4-3.2c0-.1-.1-.2-.2-.2zm2-.6c-.2 0-.3.1-.3.3l-.3 3.7.3 3.6c0 .2.1.3.3.3s.3-.1.3-.3l.4-3.6-.4-3.7c0-.2-.1-.3-.3-.3zm2.1-.6c-.2 0-.3.1-.4.3l-.3 4.3.3 4.1c0 .2.2.3.4.3s.3-.1.3-.3l.3-4.1-.3-4.3c0-.2-.1-.3-.3-.3zm2.1-1.7c-.2 0-.4.2-.4.4l-.3 6 .3 4c0 .2.2.4.4.4s.4-.2.4-.4l.3-4-.3-6c0-.2-.2-.4-.4-.4zm2.1-1.2c-.2 0-.4.2-.4.4l-.2 7.1.2 4c0 .2.2.4.4.4s.4-.2.4-.4l.3-4-.3-7.1c0-.2-.2-.4-.4-.4zm6.9 3.5c-.4 0-.9.1-1.3.3-.3-3-2.8-5.3-5.8-5.3-.7 0-1.5.2-2.1.4-.3.1-.3.2-.3.5v10.5c0 .3.2.5.4.5h9.1c1.8 0 3.3-1.5 3.3-3.3s-1.5-3.6-3.3-3.6z"/></svg></a>
+          <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
+        </div>
+      </div>
+      <div class="hero-photo figure">
+        <img src="images/chacha-portrait.jpg" alt="CHACHAMAN" />
+        <div class="cap"><span>Fig. 01 — <b>CHACHAMAN</b></span><span>NYC → DFW</span></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marq"><div class="marq-track" id="mq1"><span>OPEN FORMAT</span><span class="r">/</span><span>CLASSIC HOUSE</span><span class="r">/</span><span>HIP-HOP</span><span class="r">/</span><span>R&amp;B EDITS</span><span class="r">/</span><span>JERSEY CLUB</span><span class="r">/</span><span>HIP-HOUSE</span><span class="r">/</span></div></div>
+
+<!-- ============ ON STAGE ============ -->
+<section id="gallery">
+  <div class="wrap fade">
+    <div class="shead"><span class="no">[02]</span><h2>On Stage</h2><span class="right">Live · Loud · In Motion</span></div>
+    <div class="gal-grid">
+      <div class="gal figure"><img src="images/chacha-live-1.jpg" alt="Live"><div class="cap"><span>Fig. 02 — <b>Working the crowd</b></span><span>Live</span></div></div>
+      <div class="gal figure"><img src="images/chacha-live-2.jpg" alt="Live"><div class="cap"><span>Fig. 03 — <b>Front row energy</b></span><span>Live</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE MIX ============ -->
+<section id="mix">
+  <div class="wrap fade">
+    <div class="shead"><span class="no">[03]</span><h2>The Mix</h2><span class="right">Motion Club 51</span></div>
+    <div class="player">
+      <div class="bar"><span><span class="dot">●</span> Now Playing — Cha Cha Mix Vol. 1</span><span>House / Hip-Hop / R&amp;B / Jersey Club</span></div>
+      <div class="frame"><iframe id="mixFrame" title="ChaChaMan – Cha Cha Mix Vol. 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen src=""></iframe></div>
+    </div>
+    <p class="unmute">Auto-starts muted — <b>tap to unmute</b> and turn it up.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap fade">
+    <div class="shead"><span class="no">[04]</span><h2>About</h2><span class="right">The Story</span></div>
+    <div class="about-grid">
+      <div>
+        <p class="about-lead">Music and marketing aren't two careers. They're <span class="r">one operating system.</span></p>
+        <div class="about-copy">
+          <p><b>DJ. Producer. Artist.</b> Raised in New York, where open format isn't a style — it's survival. If the room moves, it's in the crate: classic house, hip-hop, R&amp;B edits, Jersey club, and the hip-house lane in between.</p>
+          <p>Behind the decks, ChaChaMan reads rooms and builds energy. Behind the scenes, he's an <b>entrepreneur specializing in digital marketing</b> — and the <b>owner of Area 51 Radio</b>, a Texas music media platform putting independent artists in front of real audiences.</p>
+        </div>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="k">Origin</span><span class="v">New York</span></div>
+        <div class="fact"><span class="k">Format</span><span class="v">Open · Any Room</span></div>
+        <div class="fact"><span class="k">Craft</span><span class="v">DJ · Producer</span></div>
+        <div class="fact"><span class="k">Platform</span><span class="v">Area 51 Radio</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marq paper"><div class="marq-track rev" id="mq2"><span>WEDDINGS</span><span class="r">/</span><span>PARTIES</span><span class="r">/</span><span>CORPORATE</span><span class="r">/</span><span>BARS &amp; LOUNGES</span><span class="r">/</span><span>BRAND ACTIVATIONS</span><span class="r">/</span><span>WEDDINGS</span><span class="r">/</span><span>PARTIES</span><span class="r">/</span><span>CORPORATE</span><span class="r">/</span><span>BARS &amp; LOUNGES</span><span class="r">/</span></div></div>
+
+<!-- ============ PLAYED ============ -->
+<section id="played">
+  <div class="wrap fade">
+    <div class="shead"><span class="no">[05]</span><h2>Where I've Played</h2><span class="right">Catch Me Live</span></div>
+    <div class="list">
+      <div class="li"><span class="no">01</span><span class="ti">New York</span><span class="ds">Where it started — rooms, clubs and the open-format grind.</span></div>
+      <div class="li"><span class="no">02</span><span class="ti">Weddings</span><span class="ds">Reading the room all night so every moment hits right.</span></div>
+      <div class="li"><span class="no">03</span><span class="ti">Parties</span><span class="ds">Private events and house parties that don't stop moving.</span></div>
+      <div class="li"><span class="no">04</span><span class="ti">Corporate Events</span><span class="ds">Clean, professional sets that still keep the energy up.</span></div>
+      <div class="li"><span class="no">05</span><span class="ti">Bars &amp; Lounges</span><span class="ds">Late-night vibes — the right record at the right time.</span></div>
+      <div class="li"><span class="no">06</span><span class="ti">Markets</span><span class="ds">Including sets at <b>Market</b> &amp; <b>Plug Hub Market</b> — keeping the floor in motion.</span></div>
+    </div>
+    <p class="play-note">Booking <span class="r">weddings, parties, corporate events, bars, lounges</span> and beyond — <b>if it needs energy, it needs ChaChaMan.</b></p>
+  </div>
+</section>
+
+<!-- ============ AREA 51 ============ -->
+<section id="area51">
+  <div class="wrap fade">
+    <div class="shead"><span class="no">[06]</span><h2>Area 51 Radio</h2><span class="right">Creative Music Television</span></div>
+    <div class="a51-grid">
+      <div>
+        <p class="a51-lead">Independent artists.<br><span class="r">Real experiences.</span></p>
+        <div class="a51-chips" style="margin-top:22px">
+          <span class="r">Motion Market Showcase</span><span>Gallery DeFi</span><span>Silent Disco</span><span>Artist Features</span><span class="r">1M+ Views</span>
+        </div>
+      </div>
+      <div class="a51-copy">
+        <p><b>Area 51 Radio</b> is a Texas-based music media platform built to put independent artists on — live performances, interviews and artist features out of the Dallas–Fort Worth scene, with <b>over a million views</b> across Instagram, TikTok and YouTube.</p>
+        <p>Under <b>Creative Music Television</b>, Area 51 produces real cultural moments — the Motion Market Cultural Showcase, Gallery DeFi activations, and Silent Disco events. Founded and owned by ChaChaMan: don't just play the culture — <b>build it.</b></p>
+        <a class="tlink light" data-link="area51" target="_blank" rel="noopener">Visit Area 51 Radio →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section id="booking">
+  <div class="wrap fade">
+    <div class="book-big" id="bookbig">BOOK<span class="r">.</span></div>
+    <p class="book-sub">Weddings / Parties / Corporate Events / Bars &amp; Lounges / Brand Activations</p>
+    <div class="contact-rows">
+      <a class="contact" id="bookingEmail" href="#"><span class="k">✉</span><span id="bookingEmailText">booking email</span></a>
+      <a class="contact" id="bookingPhone" href="#"><span class="k">☎</span><span id="bookingPhoneText">booking phone</span></a>
+    </div>
+    <div class="socials">
+      <a data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.8.4 4 .7c-.8.3-1.5.8-2.2 1.4C1.2 2.8.7 3.5.4 4.3c-.3.8-.5 1.7-.6 3C-.2 8.6-.2 9 0 12.3c0 3.3 0 3.7.1 5 .1 1.3.3 2.2.6 3 .3.8.8 1.5 1.4 2.2.7.6 1.4 1.1 2.2 1.4.8.3 1.7.5 3 .6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.2-.3 3-.6.8-.3 1.5-.8 2.2-1.4.6-.7 1.1-1.4 1.4-2.2.3-.8.5-1.7.6-3 .1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.2-.6-3-.3-.8-.8-1.5-1.4-2.2C21.2 1.2 20.5.7 19.7.4c-.8-.3-1.7-.5-3-.6C15.4-.2 15-.2 11.7 0H12zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm7.8-10.4a1.4 1.4 0 1 1-2.8 0 1.4 1.4 0 0 1 2.8 0z"/></svg></a>
+      <a data-link="tiktok" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M19.6 6.7a4.8 4.8 0 0 1-3.8-4.4V2h-3.4v13.3a2.9 2.9 0 1 1-2-2.7V9.1a6.3 6.3 0 1 0 5.4 6.2V8.9a8.1 8.1 0 0 0 4.6 1.4V6.9c-.3 0-.6 0-.8-.2z"/></svg></a>
+      <a data-link="soundcloud" target="_blank" rel="noopener" aria-label="SoundCloud"><svg viewBox="0 0 24 24"><path d="M1.2 13.6c-.1 0-.2.1-.2.2l-.3 2 .3 2c0 .1.1.2.2.2s.2-.1.2-.2l.3-2-.3-2c0-.1-.1-.2-.2-.2zm2-1.2c-.1 0-.2.1-.3.2l-.3 3.2.3 3.1c0 .1.1.2.3.2.1 0 .2-.1.2-.2l.4-3.1-.4-3.2c0-.1-.1-.2-.2-.2zm2-.6c-.2 0-.3.1-.3.3l-.3 3.7.3 3.6c0 .2.1.3.3.3s.3-.1.3-.3l.4-3.6-.4-3.7c0-.2-.1-.3-.3-.3zm2.1-.6c-.2 0-.3.1-.4.3l-.3 4.3.3 4.1c0 .2.2.3.4.3s.3-.1.3-.3l.3-4.1-.3-4.3c0-.2-.1-.3-.3-.3zm2.1-1.7c-.2 0-.4.2-.4.4l-.3 6 .3 4c0 .2.2.4.4.4s.4-.2.4-.4l.3-4-.3-6c0-.2-.2-.4-.4-.4zm2.1-1.2c-.2 0-.4.2-.4.4l-.2 7.1.2 4c0 .2.2.4.4.4s.4-.2.4-.4l.3-4-.3-7.1c0-.2-.2-.4-.4-.4zm6.9 3.5c-.4 0-.9.1-1.3.3-.3-3-2.8-5.3-5.8-5.3-.7 0-1.5.2-2.1.4-.3.1-.3.2-.3.5v10.5c0 .3.2.5.4.5h9.1c1.8 0 3.3-1.5 3.3-3.3s-1.5-3.6-3.3-3.6z"/></svg></a>
+      <a data-link="youtube" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.5 15.5v-7l6.3 3.5-6.3 3.5z"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex;justify-content:space-between;width:100%;flex-wrap:wrap;gap:10px">
+    <span class="lg">CHACHAMAN.</span>
+    <span>© <span id="yr"></span> — New York Raised</span>
+    <span>Powered by Area 51 Radio / CMTV</span>
+    <span><a id="footEmail" href="#">admin@creativemusictelevision.com</a></span>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('[data-link]').forEach(function(el){var k=el.getAttribute('data-link');if(window.LINKS[k])el.href=window.LINKS[k];});
+  (function(){var em=window.LINKS.bookingEmail,a=document.getElementById('bookingEmail'),t=document.getElementById('bookingEmailText');
+    if(em&&em.indexOf('PASTE')===-1){t.textContent=em;a.href='mailto:'+em+'?subject=Booking%20Inquiry%20%E2%80%94%20ChaChaMan';
+      document.getElementById('footEmail').textContent=em;document.getElementById('footEmail').href='mailto:'+em;}})();
+  (function(){var ph=window.LINKS.bookingPhone,a=document.getElementById('bookingPhone'),t=document.getElementById('bookingPhoneText');
+    if(ph){t.textContent=ph;var tel=ph.replace(/[^0-9+]/g,'');a.href='tel:'+tel;}})();
+  document.getElementById('mixFrame').src='https://www.youtube-nocookie.com/embed/'+window.LATEST_MIX_ID+'?autoplay=1&mute=1&playsinline=1&rel=0&modestbranding=1&loop=1&playlist='+window.LATEST_MIX_ID;
+  ['mq1','mq2'].forEach(function(id){var t=document.getElementById(id);if(t)t.innerHTML+=t.innerHTML;});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+
+  // fit one-line wordmarks to their width
+  function fitEl(el){if(!el)return;el.style.whiteSpace='nowrap';var lo=24,hi=240,best=lo;
+    while(lo<=hi){var mid=(lo+hi)>>1;el.style.fontSize=mid+'px';if(el.scrollWidth<=el.clientWidth){best=mid;lo=mid+1;}else{hi=mid-1;}}el.style.fontSize=best+'px';}
+  function fitAll(){fitEl(document.getElementById('wordmark'));fitEl(document.getElementById('bookbig'));}
+  if(document.fonts&&document.fonts.ready){document.fonts.ready.then(fitAll);}
+  window.addEventListener('load',fitAll);window.addEventListener('resize',fitAll);fitAll();
+
+  // scroll progress bar
+  var prog=document.getElementById('progress');
+  window.addEventListener('scroll',function(){var h=document.documentElement;var sc=h.scrollTop/(h.scrollHeight-h.clientHeight);prog.style.width=(sc*100)+'%';},{passive:true});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.1});
+  document.querySelectorAll('.fade').forEach(function(el){io.observe(el);});
+</script>
+</body>
+</html>
